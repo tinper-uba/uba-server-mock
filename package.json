@@ -1,0 +1,24 @@
+{
+  "name": "uba-server-mock",
+  "version": "0.0.1",
+  "description": "mock server plugin for uba-server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tinper-uba/uba-server-mock.git"
+  },
+  "keywords": [
+    "uba",
+    "uba-server",
+    "mock"
+  ],
+  "author": "yueming@yonyou.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tinper-uba/uba-server-mock/issues"
+  },
+  "homepage": "https://github.com/tinper-uba/uba-server-mock#readme"
+}
