@@ -1,6 +1,6 @@
 {
   "name": "uba-server-mock",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "mock server plugin for uba-server",
   "main": "index.js",
   "scripts": {
