@@ -4,7 +4,7 @@
  */
 
 const Router = require("koa-router");
-const bodyParser = require('koa-bodyparser');
+const bodyParser = require("koa-bodyparser");
 const utils = require("./utils");
 
 module.exports = (app, opt) => {
