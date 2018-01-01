@@ -48,16 +48,57 @@ exports.loadMock = (router, file) => {
           ctx.set("Access-Control-Allow-Origin", "*");
           ctx.set("Uba-Server-Mock", require("./package.json").version);
           ctx.body = await this.getMockConfig(mock[methor][i][url]);
-          if(methor == "get"){
+          // let txt = this.tempToText(await this.loadFile(mock[methor][i][url]));
+          // console.log(txt);
+          if (methor == "get") {
             text = ctx.query;
-          }else{
+          } else {
             text = ctx.request.body;
           }
           text = JSON.stringify(text);
           console.log(chalk.yellow(`[${this.getTime()}] [MockServer] : Methor : ${methor} -> Path : ${url} -> ReceiveData : ${text}`))
         });
       }
-
     }
   }
+}
+
+
+/**
+ *  读取一个文件
+ * @param {*} file 
+ */
+exports.loadFile = (file) => {
+  return new Promise((resolve, reject) => {
+    fs.readFile(path.resolve(".", file), "utf-8", (err, data) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(data);
+      }
+    });
+  });
+}
+
+exports.tempToText = (source, key) => {
+  let type = source.split("@")[1].split("|")[0];
+  let len = source.split("@")[1].split("|")[1];
+  console.log(type);
+  console.log(len);
+}
+
+exports.genRandomStr = (randomFlag = true, min, max) => {
+  let str = "",
+    range = min,
+    arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+
+  // 随机产生
+  if (randomFlag) {
+    range = Math.round(Math.random() * (max - min)) + min;
+  }
+  for (var i = 0; i < range; i++) {
+    pos = Math.round(Math.random() * (arr.length - 1));
+    str += arr[pos];
+  }
+  return str;
 }
