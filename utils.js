@@ -1,3 +1,7 @@
+/**
+ * mock core
+ */
+
 const fs = require("fs");
 const path = require("path");
 const chalk = require("chalk");
@@ -47,9 +51,9 @@ exports.loadMock = (router, file) => {
           let text;
           ctx.set("Access-Control-Allow-Origin", "*");
           ctx.set("Uba-Server-Mock", require("./package.json").version);
-          ctx.body = await this.getMockConfig(mock[methor][i][url]);
-          // let txt = this.tempToText(await this.loadFile(mock[methor][i][url]));
-          // console.log(txt);
+          // ctx.body = await this.getMockConfig(mock[methor][i][url]);
+          let txt = await this.loadFile(mock[methor][i][url]);
+          ctx.body = txt;
           if (methor == "get") {
             text = ctx.query;
           } else {
