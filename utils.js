@@ -59,7 +59,7 @@ exports.loadMock = (router, file) => {
           // } else {
           //   text = ctx.request.body;
           // }
-          text = JSON.stringify(text);
+          // text = JSON.stringify(text);
           console.log(chalk.yellow(`[${this.getTime()}] [MockServer] : Method : ${methor} -> Path : ${url} `))
         });
       }
