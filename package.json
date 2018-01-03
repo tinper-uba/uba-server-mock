@@ -1,6 +1,6 @@
 {
   "name": "uba-server-mock",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "mock server plugin for uba-server",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,6 @@
   "homepage": "https://github.com/tinper-uba/uba-server-mock#readme",
   "dependencies": {
     "chalk": "^2.3.0",
-    "koa-bodyparser": "^4.2.0",
     "koa-router": "^7.3.0"
   }
 }
