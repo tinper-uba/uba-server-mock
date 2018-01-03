@@ -5,6 +5,8 @@
 [![NPM downloads](http://img.shields.io/npm/dm/uba-server-mock.svg?style=flat)](https://npmjs.org/package/uba-server-mock)
 
 ---
+[![NPM](https://nodei.co/npm/uba-server-mock.png)](https://nodei.co/npm/uba-server-mock/)
+---
 
 # Installation
 

@@ -48,19 +48,19 @@ exports.loadMock = (router, file) => {
     for (let i = 0; i < mock[methor].length; i++) {
       for (let url in mock[methor][i]) {
         router[methor](url, async(ctx) => {
-          let text;
+          // let text;
           ctx.set("Access-Control-Allow-Origin", "*");
           ctx.set("Uba-Server-Mock", require("./package.json").version);
           // ctx.body = await this.getMockConfig(mock[methor][i][url]);
           let txt = await this.loadFile(mock[methor][i][url]);
           ctx.body = txt;
-          if (methor == "get") {
-            text = ctx.query;
-          } else {
-            text = ctx.request.body;
-          }
+          // if (methor == "get") {
+          //   text = ctx.query;
+          // } else {
+          //   text = ctx.request.body;
+          // }
           text = JSON.stringify(text);
-          console.log(chalk.yellow(`[${this.getTime()}] [MockServer] : Method : ${methor} -> Path : ${url} -> ReceiveData : ${text}`))
+          console.log(chalk.yellow(`[${this.getTime()}] [MockServer] : Method : ${methor} -> Path : ${url} `))
         });
       }
     }
