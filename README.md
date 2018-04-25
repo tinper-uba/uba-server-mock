@@ -16,14 +16,6 @@ $ npm install uba-server-mock -D
 
 # Usage
 
-open `uba.config.js` file 
-```js
-plugins: {
-    mock: {
-        file : "uba.mock.js"
-    }
-}
-```
 Edit the `.ubarc` file
 ```js
 
