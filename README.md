@@ -11,7 +11,7 @@
 # Installation
 
 ```bash
-$ npm install uba-server uba-server-mock -D
+$ npm install uba-server-mock -D
 ```
 
 # Usage
@@ -24,18 +24,18 @@ plugins: {
     }
 }
 ```
-create file `uba.mock.js` file
+Edit the `.ubarc` file
 ```js
-module.exports = {
-    "get" : [{
-        "/api/user/get" : "./mock/get.json"
-    }],
-    "post" : [{
-        "/api/user/post" : "./mock/post.json"
-    }]
-}
-```
-# API
 
-### file
-- mock config file.
+{
+    "mock": {
+        "GET": [{
+        "/local/user/get": "./mock/user/get.json"
+        }],
+        "POST": [{
+        "/local/user/post": "./mock/user/post.json"
+        }]
+    }
+}
+
+```

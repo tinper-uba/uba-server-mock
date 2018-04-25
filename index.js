@@ -1,16 +1,12 @@
 /**
  * mock server plugin for uba-server
- * Date : 2018-01-03 09:34:59
+ * Date : 2018-04-25 09:38:55
  */
 
-const Router = require("koa-router");
-// const bodyParser = require("koa-bodyparser");
-const utils = require("./utils");
+const serveStatic = require("serve-static");
+// const utils = require("./utils");
 
 module.exports = (app, opt) => {
-  let router = new Router();
-  utils.loadMock(router,opt.file);
-  // app.use(bodyParser());
-  app.use(router.routes());
-  app.use(router.allowedMethods());
+  //utils.loadMock(router, opt.file);
+  
 }

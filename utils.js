@@ -7,23 +7,6 @@ const path = require("path");
 const chalk = require("chalk");
 
 
-
-/**
- * 读取文件
- * @param {*} filepath 
- */
-exports.readMockFile = (filepath) => {
-  return new Promise((resolve, reject) => {
-    fs.readFile(filepath, "utf-8", (err, data) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(data);
-      }
-    });
-  });
-}
-
 /**
  * 获得mock文件
  * @param {*} file 
@@ -82,27 +65,4 @@ exports.loadFile = (file) => {
       }
     });
   });
-}
-
-exports.tempToText = (source, key) => {
-  let type = source.split("@")[1].split("|")[0];
-  let len = source.split("@")[1].split("|")[1];
-  console.log(type);
-  console.log(len);
-}
-
-exports.genRandomStr = (randomFlag = true, min, max) => {
-  let str = "",
-    range = min,
-    arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-
-  // 随机产生
-  if (randomFlag) {
-    range = Math.round(Math.random() * (max - min)) + min;
-  }
-  for (var i = 0; i < range; i++) {
-    pos = Math.round(Math.random() * (arr.length - 1));
-    str += arr[pos];
-  }
-  return str;
 }
